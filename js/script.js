@@ -58,12 +58,7 @@ function game() {
     console.log(playRound(playerSelection, computerSelection));
 }
 
-//playing the game 5 times
-for (let i = 0;  i < 5; i++) {
-    game();
-    console.log(computerScore);
-    console.log(playerScore);
-}
+
 
 if (computerScore > playerScore) {
     console.log(`You Lost, final score is \nYou: ${playerScore} Computer: ${computerScore} `)
