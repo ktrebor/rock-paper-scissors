@@ -1,0 +1,32 @@
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.paragraph {
+    text-align: center;
+}
+
+.weapons {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.button {
+    border: 1px solid black;
+    margin: 2em;
+}
+
+.button img {
+    width: 200px;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
