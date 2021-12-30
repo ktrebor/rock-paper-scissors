@@ -1,20 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
     font-family: Inter, sans-serif;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-
+body{
+    background-color: #F5EEDC;
+    position: relative;
+}
 
 .title {
+    font-size: 58px;
     text-align: center;
 }
 
 .subtitle {
+    font-size: 28px;
     text-align: center;
 }
 
-.paragraph {
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
     text-align: center;
+    font-size: 26px;
+}
+
+#player-sc-lbl {
+    color: green;
+}
+
+#computer-sc-lbl {
+    color: red;
 }
 
 .weapons {
@@ -27,27 +47,42 @@
 
 .button {
     border: 1px solid black;
+    transition: all .2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px;
 }
 
 .button img {
     width: 200px;
 }
 
-.score {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    text-align: center;
-}
-
 .round-points {
     text-align: center;
+    font-size: 26px;
 }
 
 .hidden {
     display: none;
 }
 
-.final-results {
+#reset-game {
+    height: 100vh;
     text-align: center;
+    font-size: 38px;
+}
+
+#play-again {
+    border: 1px solid black;
+    transition: all .2s ease-in-out;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#play-again:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px;
 }
