@@ -8,6 +8,11 @@ const weapons = document.querySelectorAll(`.button`);
 const container = document.querySelector(".container");
 const resetGame = document.querySelector("#reset-game");
 const playAgain = document.querySelector("#play-again");
+const roundPoints = document.querySelector(".round-points");
+const computerPoints = document.querySelector('#computer-score');
+const playerPoints = document.querySelector('#player-score');
+const finalResult = document.querySelector('.final-results');
+
 
 //---play one Round for each press of a button
 weapons.forEach((button) => {
@@ -18,7 +23,6 @@ weapons.forEach((button) => {
         endGame();
     });
 });
-
 
 
 //GAME LOGIC
@@ -41,31 +45,38 @@ function computerPlay() {
 //---update the score
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        document.querySelector('.round-points').innerText = "It's a Tie";
+        roundPoints.textContent = `It's a Tie. Both of you selected ${playerSelection}`;
+        roundPoints.style.color = "blue";
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore++;
-        document.querySelector('.round-points').innerText = "Computer's point";
-        document.querySelector('#computer-score').innerText = computerScore;
+        roundPoints.textContent = `Computer's point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "red";
+        computerPoints.textContent = computerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
-        document.querySelector('.round-points').innerText = "Your point";
-        document.querySelector('#player-score').innerText = playerScore;
+        roundPoints.textContent = `Your point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "green";
+        playerPoints.textContent = playerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore++;
-        document.querySelector('.round-points').innerText = "Computer's Point";
-        document.querySelector('#computer-score').innerText = computerScore;
+        roundPoints.textContent = `Computer's point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "red";
+        computerPoints.textContent = computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
-        document.querySelector('.round-points').innerText = "Your point";
-        document.querySelector('#player-score').innerText = playerScore;
+        roundPoints.textContent = `Your point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "green";
+        playerPoints.textContent = playerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore++;
-        document.querySelector('.round-points').innerText = "Computer's Point";
-        document.querySelector('#computer-score').innerText = computerScore;
+        roundPoints.textContent = `Computer's point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "red";
+        computerPoints.textContent = computerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
-        document.querySelector('.round-points').innerText = "Your point";
-        document.querySelector('#player-score').innerText = playerScore;
+        roundPoints.textContent = `Your point. You selected ${playerSelection} and the computer selected ${computerSelection}`;
+        roundPoints.style.color = "green";
+        playerPoints.textContent = playerScore;
     }
 }
 
@@ -74,9 +85,11 @@ function playRound(playerSelection, computerSelection) {
 function endGame() {
     if (computerScore === 5 || playerScore === 5) {
         if (computerScore > playerScore) {
-            document.querySelector('.final-results').innerHTML = `You Lost! \nFinal score is You: ${playerScore} Computer: ${computerScore}`;
+            finalResult.textContent = `You lost! \nFinal score is You: ${playerScore} vs Computer: ${computerScore}`;
+            finalResult.style.color = 'red';
         } else {
-            document.querySelector('.final-results').innerHTML = `You WON! \nFinal score is You: ${playerScore} Computer: ${computerScore}`;
+            finalResult.textContent = `You won! \nFinal score is You: ${playerScore} vs Computer: ${computerScore}`;
+            finalResult.style.color = 'green';
         }
         restartGame();
 }
