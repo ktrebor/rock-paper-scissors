@@ -8,20 +8,15 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/script.js" defer></script>
-    
+
 </head>
 
 <body>
     <main>
-        <div class="content">
-            <h1 class="title">Rock Papers Scissors</h1>
-            <h4 class="subtitle">Can you beat the Computer?</h4>
-            <p class="paragraph">Choose your weapon:</p>
-            <div class="weapons">
-                <div class="button" id="rock"><img src="images/rock-sign.png" alt="rock sign"></div>
-                <div class="button" id="paper"><img src="images/paper-sign.png" alt="paper sign"></div>
-                <div class="button" id="scissors"><img src="images/scissors-sign.png" alt="scissors sign"></div>
-            </div>
+        <div class="container">
+            <h1 class="title">Rock, Paper, Scissors</h1>
+            <h4 class="subtitle">Play until one of you reaches 5 points</h4>
+            
             <div class="score">
                 <div id="player-sc-lbl">
                     <p class="label">You</p>
@@ -32,8 +27,21 @@
                     <p id="computer-score">0</p>
                 </div>
             </div>
+
+            <div class="weapons">
+                <div class="button" id="rock"><img src="images/rock-sign.png" alt="rock sign"></div>
+                <div class="button" id="paper"><img src="images/paper-sign.png" alt="paper sign"></div>
+                <div class="button" id="scissors"><img src="images/scissors-sign.png" alt="scissors sign"></div>
+            </div>
+            <p class="round-points"></p>
         </div>
     </main>
+    <div id="reset-game" class="hidden">
+        <div class="results">
+            <h4 class="final-results"></h4>
+        </div>
+        <button id="play-again">Play Again?</button>
+    </div>
 </body>
 
 </html>
